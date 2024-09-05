@@ -1,0 +1,101 @@
+/* Reset margins, paddings, and borders for all elements */
+* {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font-family: inherit;
+      vertical-align: baseline;
+      box-sizing: border-box;
+    }
+    
+    /* Set default block display for commonly used elements */
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section {
+      display: block;
+    }
+    
+    /* Remove list styles on ul and ol elements */
+    ul, ol {
+      list-style: none;
+    }
+    
+    /* Remove default fieldset and legend styling */
+    fieldset, legend {
+      border: 0;
+      padding: 0;
+    }
+    
+    /* Remove table-specific defaults */
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    
+    /* Reset link styles: remove underlines and set the default text color */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Reset images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Reset input, button, and textarea styles */
+    input, button, textarea, select {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      background: none;
+      border: none;
+      padding: 0;
+      color: inherit;
+      appearance: none;
+    }
+    
+    /* Reset button-specific styling */
+    button {
+      cursor: pointer;
+      outline: none;
+    }
+    
+    /* Reset form input styles */
+    input[type="text"], input[type="password"], textarea {
+      box-sizing: border-box;
+    }
+    
+    /* Reset heading and paragraph margins */
+    h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+      font-weight: normal;
+    }
+    
+    /* Remove text decoration from hyperlinks */
+    a:focus, a:hover {
+      text-decoration: none;
+      outline: none;
+    }
+    
+    /* Reset HTML5 video/audio elements */
+    audio, video {
+      display: block;
+      max-width: 100%;
+    }
+    
+    /* Reset form elements' appearance */
+    button, input, optgroup, select, textarea {
+      margin: 0;
+      padding: 0;
+      font-family: inherit;
+      color: inherit;
+      background: transparent;
+    }
+    
+    /* Reset figure margins */
+    figure {
+      margin: 0;
+    }
+    

@@ -1,0 +1,121 @@
+:root {
+  /* Core Colors */
+  --dark-gray: #2b2b2b;
+  --light-gray: #4d4d4d;
+  --bright-green: #00ff88;
+  --dark-green: #006644;
+  --white: #ffffff;
+  --soft-yellow: #ffcc00;
+  --red: #ff3333;
+
+  /* Usage Guidelines */
+  --background-color: var(--dark-gray);        /* Main background */
+  --slot-container-bg: var(--light-gray);      /* Slot machine container */
+  --accent-color: var(--bright-green);         /* Active buttons, highlights */
+  --button-bg-color: var(--dark-green);        /* Inactive buttons */
+  --text-color: var(--white);                  /* Main text */
+  --highlight-color: var(--soft-yellow);       /* Special highlights (e.g., winning lines) */
+  --lever-handle-color: var(--red);            /* Lever handle */
+}
+
+/*------------------GENERAL-STYLE------------------------*/
+body{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Trebuchet MS", "Verdana", "Arial", sans-serif;
+}
+
+.container{
+  height: 100vh;
+  padding:0px 40px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  
+}
+
+/*------------------CASINO-START------------------------*/
+
+.start-content{
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--soft-yellow); 
+  padding: 20px 60px 20px 60px;
+  
+  text-align: center;
+
+  max-width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.title-start-content{
+  font-size: 20px;
+  color: var(--soft-yellow);
+  font-weight: 600;
+}
+
+.text-start-content{
+  font-size: 14px;
+}
+/*---input-style---*/
+.enter-balance {
+  color: var(--dark-gray); 
+  background-color: var(--white); 
+  outline: none;
+  padding: 4px 12px; 
+  border-radius: 4px;
+  max-width: 80px;
+  text-align: center;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enter-balance:focus {
+  border-color: var(--soft-yellow); 
+  box-shadow: 0 0 5px var(--soft-yellow); 
+}
+
+.enter-balance:hover {
+  border-color: var(--soft-yellow); 
+}
+/*---button-style---*/
+  .start-button{
+    color: var(--dark-gray);
+    background: var(--soft-yellow);
+
+    border-radius: 8px;
+
+    padding: 8px 48px 8px 48px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+
+  }
+
+/* Hover effect */
+.start-button:hover {
+  background: var(--bright-green); 
+  color: var(--white); 
+  transform: scale(1.05); /*MAKES THE BUTTON POP*/
+  
+}
+
+
+
+
+
+
+
+
+
+
