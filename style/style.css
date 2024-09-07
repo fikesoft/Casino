@@ -27,27 +27,36 @@ body{
 
 .container{
   height: 100vh;
-  padding:0px 40px 0px 40px;
+  padding:0px 80px 0px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
   
 }
 
-/*------------------CASINO-START------------------------*/
+/*------------------CASINO-OVERLAY------------------------*/
+.start-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ensure full viewport width */
+  height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8); /* Transparent overlay (mask) */
+}
 
-.start-content{
-  background-color: var(--light-gray);
+/* Inner content styling */
+.start-content .inner-content {
+  background-color: var(--light-gray); /* Opaque background for the content itself */
   border-radius: 10px;
-  box-shadow: 0 0 5px var(--soft-yellow); 
-  padding: 20px 60px 20px 60px;
-  
+  padding: 20px 60px;
+  box-shadow: 0 0 5px var(--soft-yellow);
   text-align: center;
-
   max-width: 320px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,44 +123,157 @@ body{
 .casino-content{
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 30px;
 }
 
 .info-account{
   display: flex;
-  gap: 450px;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+  padding: 10px 5px 10px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--soft-yellow);
+}
+
+.balance-container{
+  color: var(--dark-gray);
+  font-size: 22px;
+  border: 1px solid var(--soft-yellow);
+  font-weight: bold;
+  padding: 2px 7px 2px 7px;
+  background-color: var(--white);
+  border-radius: 8px;
 }
 
 .balance-actions{
   display: flex;
+  align-items: center;
   gap: 50px;
+}
+
+.bet-amount{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  gap: 10px;
+  
+  padding: 2px 5px 2px 5px;
+  color: var(--soft-yellow);
+}
+
+.bet-amount #bet-amount{
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid   var(--soft-yellow);
+  max-width: 100px;
+  background-color: var(--white);
+  padding: 1px 8px 1px 8px;
+}
+
+.balance-add, .account img{
+  cursor: pointer;
 }
 
 /*------------------CASINO TEMPLATE-----------------------*/
 .slot-machine{
   display: flex;
-  flex-direction: column;
   gap: 20px;
+  background-color: var(--light-gray);
+  padding: 50px 100px 50px 100px;
+  border-radius: 10px;
+  border: 1px solid var(--soft-yellow);
 }
 
 .level-bet{
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 50px;
-  max-height: 50px; 
+  text-align: center;
+  justify-content: space-between;
+  color: var(--dark-gray);
+}
+
+.bet-button{
+  padding: 30px 25px 30px 25px;
+  background-color: var(--soft-yellow);
+  border-radius: 4px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--dark-gray);
+}
+
+.bet-button:hover, .bet-button.selected {
+  background-color: var(--bright-green); 
+  transform: scale(1.05); /* Makes the button pop */
 }
 
 .slot-template{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: #ffffff;
+
 }
 
 .slot-column{
+ display: flex;
+ justify-content: center;
+ gap: 50px;
+ background-color: var(--white);
+
+ border-radius: 4px;
+border-left: 1px solid var(--soft-yellow);
+border-right: 1px solid var(--soft-yellow);
+ box-shadow: -5px 0 5px -5px rgba(243, 227, 54, 0.5), 5px 0 px -5px rgba(243, 227, 54, 0.5);}
+
+.column-content img{
+  height: 150px;
+  width: 100px;
+  box-shadow: -5px 0 5px -5px rgba(243, 227, 54, 0.5), 5px 0 5px -5px rgba(243, 227, 54, 0.5);
+  
+  padding: 15px;
+
+
+
 }
 
+
+/*------Styles for the lever container------- */
+.lever {
+  width: 25px; /* Width of the lever */
+  height: 300px; /* Height of the lever */
+  border-radius: 4px;
+  background-color: #ccc; /* Background color of the lever */
+  border-radius: 50px; /* Rounded corners */
+  position: relative; /* To allow absolute positioning of the handle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for the handle */
+.handle {
+  border: 2px solid #333; /* Border around the lever */
+
+  width: 50px; /* Width of the handle */
+  height: 50px; /* Height of the handle */
+  background-color: var(--red); /* Background color of the handle */
+  border-radius: 50px; /* Rounded corners for the handle */
+  position: absolute; /* Positioning inside the lever */
+  top: 0; /* Place the handle at the bottom of the lever */
+  cursor: pointer; /* Makes it look like the handle can be moved */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.base-lever{
+  width: 50px;
+  border-radius: 5px;
+  height: 40px;
+  position: absolute;
+  top: 260px;
+  background-color:#ccc;
+  border: 2px solid #333; /* Border around the lever */
+}
 
 
 

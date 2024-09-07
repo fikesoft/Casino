@@ -10,23 +10,33 @@
 <body>
 
     <!--OVERLAY-->
-    <div class="start-content">
-        <h1 class="title-start-content">Hi make your deposit</h1>
+<div class="start-content" id="start-content">
+    <div class="inner-content">
+        <h1 class="title-start-content">Hi, make your deposit</h1>
         <p class="text-start-content">Lorem ipsum dolor sit amet consectetur</p>
-        <input type="text" class="enter-balance">
+        <input type="text" class="enter-balance" >
         <button class="start-button" id="start-button">Play</button>
     </div>
+</div>
+
 
     <!--MAIN CONTENT-->
     <main class="main">
         <div class="container">
     
             <div class="casino-content">
-    
                 <div class="info-account">
-                    <label for="#" class="balance">0</label>
+                    
+                    <div class="balance-container">
+                        <label for="#" class="balance">0</label>
+                        <span class="money">$</span>
+                    </div>
 
                     <div class="balance-actions">
+                        <div class="bet-amount">
+                            <label for="bet-amount">Bet amount</label>
+                            <input type="text" id="bet-amount">
+                        </div>
                         <div class="balance-add">
                             <img src="/img/add.png" alt="add">
                         </div>
@@ -39,9 +49,9 @@
                 <div class="slot-machine">
     
                     <div class="level-bet">
-                            <button class="bet-button" id="bet1">1</button>
-                            <button class="bet-button" id="bet2">2</button>
-                            <button class="bet-button" id="bet3">3</button>
+                            <div class="bet-button" id="bet1">1</div>
+                            <div class="bet-button" id="bet2">2</div>
+                            <div class="bet-button" id="bet3">3</div>
                      </div>
     
                     <div class="slot-template">
@@ -95,17 +105,14 @@
                     </div>
     
                     <div class="lever" id="lever">
-                        <div class="handle" id="handle">
-
-                        </div>
-                    </div>
-    
+                        <div class="handle" id="handle"></div>
+                        <div class="base-lever"></div>
+                    </div>    
                 </div> 
-                <script src="/script/main.js"></script>
             </div>
-    
-    
         </div>
     </main>
 </body>
+<script type="module" src="/script/Run.js"></script>
+
 </html>
