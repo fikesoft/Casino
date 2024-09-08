@@ -1,5 +1,19 @@
-class Bet{
-    constructor(){
-        this.betAmount = document.querySelector('#bet-amount').value
+class BetButton{
+    constructor(buttonElement,gameInstace,lineIndex){
+        this.buttonElement = buttonElement;
+        this.lineIndex = lineIndex;
+        this.selected = false;
+        this.gameInstace = gameInstace;
+        this.buttonElement.addEventListener('click',()=>this.toggleBet())
+    }
+    toggleBet(){
+        
+            this.buttonElement.classList.toggle('selected')
+            if(this.buttonElement.classList.contains('selected')){
+                console.log('button is selected')
+                this.gameInstace.placeBet(this.lineIndex)
+            }  
     }
 }
+
+export default BetButton    

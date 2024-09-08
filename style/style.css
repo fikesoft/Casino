@@ -137,7 +137,7 @@ body{
   border: 1px solid var(--soft-yellow);
 }
 
-.balance-container{
+.balance-container  {
   color: var(--dark-gray);
   font-size: 22px;
   border: 1px solid var(--soft-yellow);
@@ -201,9 +201,10 @@ body{
   font-size: 24px;
   font-weight: bold;
   color: var(--dark-gray);
+  cursor: pointer;
 }
 
-.bet-button:hover, .bet-button.selected {
+.selected {
   background-color: var(--bright-green); 
   transform: scale(1.05); /* Makes the button pop */
 }
