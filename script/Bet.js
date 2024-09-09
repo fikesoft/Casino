@@ -2,7 +2,6 @@ class BetButton{
     constructor(buttonElement,gameInstace,lineIndex){
         this.buttonElement = buttonElement;
         this.lineIndex = lineIndex;
-        this.selected = false;
         this.gameInstace = gameInstace;
         this.buttonElement.addEventListener('click',()=>this.toggleBet())
     }
@@ -14,6 +13,8 @@ class BetButton{
                 this.gameInstace.placeBet(this.lineIndex)
             }  
     }
+
+   
 }
 
 export default BetButton    
