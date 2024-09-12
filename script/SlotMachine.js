@@ -5,7 +5,7 @@ class SlotMachine {
         this.columnsImgList = [[], [], []];
     }
 
-    spinReels() {
+    spinReels(selectedLines,winnerInstance) {
         // Iterate over each columnContent element
         this.columnContent.forEach((columnContentElement, columnIndex) => {
             // Get all img elements within the current columnContent element
@@ -26,7 +26,16 @@ class SlotMachine {
         });
 
         //Randomize
-        this.randomizerInstance.randomizeImages(this.columnsImgList, 2000);
+        // Call randomizeImages and wait for columnResult to be returned
+        this.randomizerInstance.randomizeImages(this.columnsImgList, 2000)
+        .then(columnResult => {
+            // You can now use columnResult here and call getRowsFromColumns
+            var rowsResult = this.randomizerInstance.getRowsFromColumns(columnResult);
+            var activeLines = selectedLines;
+            console.log(rowsResult)
+            //Winner
+            winnerInstance.checkWinner(activeLines,rowsResult);
+        });    
     }
 }
 

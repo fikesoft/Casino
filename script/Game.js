@@ -1,6 +1,7 @@
 import Overlay from "./Overlay.js";
 import SlotMachine from "./SlotMachine.js";
 import Randomizer from "./Randomazier.js";
+import Winner from "./Winner.js";
 //Start js
 
 class Game{
@@ -9,6 +10,9 @@ class Game{
         this.betAmount = 0;
         this.totalBet = 0;
         this.lineBets =  [0,0,0];
+        this.selectedLines = [];
+
+        this.winner = new Winner(this);
         this.overlay = new Overlay(this);
         this.randomizer = new Randomizer(this) ;
         this.slotMachine = new SlotMachine(this.randomizer);
@@ -37,7 +41,12 @@ class Game{
             console.log('Bet amount is NaN, defaulting to 0');
             betAmount = 0; // Optional: Default to 0 if the input is invalid
             this.resetSelectedLineBet()
-        }      
+        }   
+        //Getting the selectedLines
+        if (!this.selectedLines.includes(lineBetIndex)) {
+            this.selectedLines.push(lineBetIndex);
+        }
+        
         this.lineBets[lineBetIndex-1] = betAmount
         this.calculateTotalBet()
         console.log(this.totalBet + ' TOTAL BET CALCULATED')
@@ -59,7 +68,7 @@ class Game{
     spin() {
         if (this.totalBet <= this.balance) {
             this.balance -= this.totalBet; // Deduct total bet from balance
-            this.slotMachine.spinReels();
+            this.slotMachine.spinReels(this.selectedLines,this.winner);
             this.updateDisplay(this.balance);
             //Resets the line bets 
             this.resetSelectedLineBet();
