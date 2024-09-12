@@ -28,14 +28,24 @@ class Game{
         const balanceElement = document.querySelector('.balance')
         balanceElement.textContent = amount;
         console.log('UPDATE-DISPLAY display updated with the ' + amount )
+    }
 
+    getCurrentBalance(){
+        const balanceElement = document.querySelector('.balance')
+        var currentBalance =  balanceElement.textContent
+        return parseInt(currentBalance);
+    }
+
+    getBetAmount(){
+        const betAmountField = document.querySelector('#bet-amount');
+        console.log('Bet amount value:', betAmountField.value); // Check if this is correct
+
+        return parseInt(betAmountField.value, 10);
     }
 
     placeBet(lineBetIndex){
-        const betAmountField = document.querySelector('#bet-amount');
-        console.log('Bet amount value:', betAmountField.value); // Check if this is correct
     
-        var betAmount = parseInt(betAmountField.value, 10);
+        var betAmount = this.getBetAmount();
         if (isNaN(betAmount)) {
             alert('Bet something')
             console.log('Bet amount is NaN, defaulting to 0');
@@ -68,11 +78,10 @@ class Game{
     spin() {
         if (this.totalBet <= this.balance) {
             this.balance -= this.totalBet; // Deduct total bet from balance
-            this.slotMachine.spinReels(this.selectedLines,this.winner);
+            this.slotMachine.spinReels(this.selectedLines,this.winner,this);
             this.updateDisplay(this.balance);
             //Resets the line bets 
-            this.resetSelectedLineBet();
-
+            this.resetSelectedLineBet()
         } else {
             alert("Insufficient funds!");
             this.resetSelectedLineBet();
