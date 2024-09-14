@@ -59,7 +59,7 @@ class Randomizer {
 
     // Returns a random image name
     getRandomImage() {
-        const imageNames = [/*'grape', 'seven',*/ 'diamond']; 
+        const imageNames = ['grape','seven', 'diamond']; 
         const randomIndex = Math.floor(Math.random() * imageNames.length);
         return imageNames[randomIndex];
     }

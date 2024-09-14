@@ -3,7 +3,8 @@ class Winner {
 
         // Log each selected line's result
         for (let i = 0; i < selectedLines.length; i++) {
-            let lineNumber = selectedLines[i]; // Get the selected line number
+            let lineNumber = selectedLines[i];
+            console.log(lineNumber  + ' ---checkWinner lineNumber ') // Get the selected line number
             console.log(rowArrayResult[lineNumber - 1]);
         }
     

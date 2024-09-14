@@ -31,6 +31,7 @@ class SlotMachine {
         .then(columnResult => {
             // You can now use columnResult here and call getRowsFromColumns
             var rowsResult = this.randomizerInstance.getRowsFromColumns(columnResult);
+            console.log('RowBasedResult --------s')
             console.log(rowsResult)
             //Winner
             winnerInstance.checkWinner(selectedLines,rowsResult,gameInstace);
