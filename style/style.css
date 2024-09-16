@@ -275,6 +275,24 @@ border-right: 1px solid var(--soft-yellow);
   background-color:#ccc;
   border: 2px solid #333; /* Border around the lever */
 }
+/*EFFECT WINNER*/
+/* Add this to your style.css file */
+.winner-flash {
+  animation: flashEffect 1s infinite alternate;
+}
+
+@keyframes flashEffect {
+  0% {
+      background-color: var(--soft-yellow);
+      transform: scale(1);
+  }
+  100% {
+      background-color: var(--bright-green);
+      transform: scale(1.05);
+  }
+}
+
+
 
 
 
